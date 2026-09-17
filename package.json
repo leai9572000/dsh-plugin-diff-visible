@@ -1,0 +1,42 @@
+{
+  "name": "dsh-plugin-diff-visible",
+  "version": "0.1.0",
+  "description": "Auto-expand write/edit diff cards in the DSH web GUI so code changes are visible at a glance.",
+  "type": "module",
+  "license": "MIT",
+  "author": "leai9572000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leai9572000/dsh-plugin-diff-visible.git"
+  },
+  "homepage": "https://github.com/leai9572000/dsh-plugin-diff-visible#readme",
+  "bugs": {
+    "url": "https://github.com/leai9572000/dsh-plugin-diff-visible/issues"
+  },
+  "keywords": ["dsh-plugin", "deepseek-harness", "diff", "web-ui"],
+  "files": ["lib/", "cordis.patch.yml", "README.md"],
+  "engines": { "node": ">=20" },
+  "publishConfig": { "access": "public" },
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  }
+}
+

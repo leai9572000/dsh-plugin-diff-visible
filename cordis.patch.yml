@@ -1,0 +1,8 @@
+# dsh-plugin-diff-visible bundle patch: one client roster row.
+# The package.json declares `dsh.client` (platform web), so this row is both a
+# host loader entry (no-op host apply) and the browser roster entry the
+# client-modules node half scans into window.__DSH_BOOT__.
+
+- insert:
+    - id: diff-visible
+      name: 'dsh-plugin-diff-visible'
